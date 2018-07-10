@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cakemartz">
+<head>
+	<title>Cake Merchant</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--===============================================================================================-->
+		<link rel="icon" type="image/png" href="../images/icons/favicon.png" />
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/signup.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/semantic/semantic.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../fonts/linearicons-v1.0.0/icon-font.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/slick/slick.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/MagnificPopup/magnific-popup.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="../css/util.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		
+		<!--===============================================================================================-->
+
+		<style>
+
+			#cover-spin {
+				position:fixed;
+				width:100%;
+				left:0;right:0;top:0;bottom:0;
+				background-color: rgba(255,255,255,0.2);
+				z-index:9999;
+				/* display:none; */
+			}
+
+			@-webkit-keyframes spin {
+				from {-webkit-transform:rotate(0deg);}
+				to {-webkit-transform:rotate(360deg);}
+			}
+
+			@keyframes spin {
+				from {transform:rotate(0deg);}
+				to {transform:rotate(360deg);}
+			}
+
+			#cover-spin::after {
+				content:'';
+				display:block;
+				position:absolute;
+				left:48%;top:50%;
+				width:60px;height:60px;
+				border: 16px solid #f3f3f3; /* Light grey */
+				border-top: 16px solid blue;
+				border-right: 16px solid green;
+				border-bottom: 16px solid red;
+				border-top-color:transparent;
+				border-width: 4px;
+				border-radius:50%;
+				-webkit-animation: spin .8s linear infinite;
+				animation: spin .8s linear infinite;
+			}
+
+		</style>
+
+</head>
+<body class="animsition" ng-controller="signupCtrl">
+	
+	<!-- Header -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand logo" href="#">
+				<span style="font-size: 30px;color:#fff;">
+					<b>Cake </b>martz
+				</span>
+			</a>
+	
+		</div>
+	</nav>
+	
+	<!-- Sign Up Form -->
+	<section>
+		<div class="container">
+			<div class="row">
+
+				<div id="cover-spin" ng-show="loading" ></div>
+
+				<div class="d-none d-sm-none d-md-block col-md-8">
+
+					<div class="ui centered  grid container">
+				
+						<div class="row"></div>
+						<div class="row"></div>
+				
+				
+						<div class="ui text container" style="background-color:black;">
+				
+				
+							<div class="three ui  buttons center aligned grid container" style="margin:20px;">
+				
+				
+								<div class=" ui  big basic violet button" id="accountS">
+				
+									<div class="content " style="font-size:12px;color:white;">ACCOUNT SETUP</div>
+								</div>
+				
+				
+								<button class=" ui  big disabled blue basic button" id="socialP">
+									<div class="content" style="font-size:12px;color:white;">SOCIAL PROFILE</div>
+								</button>
+				
+				
+								<button class=" disabled ui big orange basic button" id="details">
+				
+									<div class="content text-uppercase" style="font-size:12px;color:white;">Location Details</div>
+								</button>
+							</div>
+								
+							<div id="account">
+				
+								<div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
+				
+				
+									<div class="ui centered header">
+										<h1 class="font" style="color:#300032;">Create your account</h1>
+									</div>
+				
+									<form class="ui form" role="form" name="vm.accountDetail">
+										<div class="field">
+											<input type="email" ng-model="profileData.email" name="email" placeholder="Email" required>
+										</div>
+				
+										<div class="field">
+											<input type="password" ng-model="profileData.password" name="password" placeholder="Password" required>
+										</div>
+				
+										<div class="one ui buttons">
+											<button class="ui  inverted violet  medium button next1 ">Next</button>
+										</div>
+				
+									</form>
+				
+				
+								</div>
+				
+							</div>
+				
+				
+							<div id="social">
+				
+				
+								<div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF; border-radius:5px;">
+				
+				
+									<div class="ui centered header">
+										<h1 class="font" style="color:rgb(50,153,153);">Personal Details</h1>
+									</div>
+				
+									<form class="ui form" role="form" name="vm.personalDetail">
+										<div class="field">
+											<input type="text" ng-model="profileData.first_name" name="first_name" placeholder="First Name" required>
+										</div>
+				
+										<div class="field">
+											<input type="text" ng-model="profileData.last_name" name="last_name" placeholder="Last Name" required>
+										</div>
+				
+										<div class="field">
+											<input type="number" ng-model="profileData.phone_no" name="phone_no" placeholder="Phone number" required>
+										</div>
+				
+										<div class="field">
+											<input type="text" ng-model="profileData.company_name" name="company_name" placeholder="company_name">
+										</div>
+				
+										<div class="two ui buttons">
+											<button class="ui  inverted violet  medium button prev1">Previous</button>
+											<button class="ui  inverted violet  medium button next2">Next</button>
+										</div>
+				
+									</form>
+				
+				
+								</div>
+				
+							</div>
+				
+				
+							<div id="personal">
+				
+				
+								<div class="ui center aligned  segment container " id="signUpBox" style="background-color: #F1F0FF;border-radius:5px;">
+				
+				
+									<div class="ui centered header">
+										<h1 class="font" style="color:orange;">Location Details</h1>
+									</div>
+				
+									<form class="ui form" role="form" name="vm.locationDetail" ng-submit="register()">
+										<div class="field">
+											<input type="text" ng-model="profileData.address" name="address" placeholder="Address">
+										</div>
+				
+										<div class="field">
+											<input type="text" ng-model="profileData.city" name="city" placeholder="City">
+										</div>
+				
+										<div class="field">
+											<input type="text" ng-model="profileData.state" name="state" placeholder="State">
+										</div>
+				
+										<div class="field">
+											<input type="text" ng-model="profileData.country" name="country" placeholder="Country">
+										</div>
+				
+										<div class="two ui buttons">
+											<button class="ui  inverted violet  medium button prev2">Previous</button>
+											<button class="ui  inverted violet  medium button submit">Submit</button>
+										</div>
+				
+									</form>
+				
+				
+								</div>
+				
+							</div>
+				
+				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  
+ 
+
+
+
+<!--===============================================================================================-->	
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/semantic/semantic.min.js"></script>
+<!--===============================================================================================-->
+	<script  src="../js/signup.js"></script>
+	<script src="../vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../vendor/bootstrap/js/popper.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../vendor/angular/angular.min.js"></script>
+	<script src="../vendor/angular/angular-route.min.js" ></script>
+	<script src="../vendor/angular/angular-ui-router.min.js" ></script>
+	<script src="../vendor/plugin.js" ></script>
+
+	<script src="../js/main.js"></script>
+
+	<script src="../js/app.js"></script>
+	<script src="../js/merchant.service.js" ></script>
+	<script src="../js/merchant.controller.js" ></script>
+
+</body>
+</html>

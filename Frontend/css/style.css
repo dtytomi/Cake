@@ -1,0 +1,78 @@
+/* Nav Bar Custom */
+.navbar-custom {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Times New Roman', Times, serif;
+  background-color: black;
+  /* padding-top: 1rem; */
+}
+.navbar-custom .navbar-toggle {
+  color: rgb(161, 19, 19);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+
+  
+}
+.navbar-custom .navbar-toggle:focus,
+.navbar-custom .navbar-toggle:active {
+  outline: solid;
+}
+.navbar-custom .navbar-brand {
+  font-weight: 500px;
+  margin-top:2px;
+}
+.navbar-custom .navbar-brand:focus {
+  outline: none;
+}
+.navbar-custom a {
+  color:wheat;
+  font-size: 18px;
+  
+}
+.navbar-custom .nav li a {
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.navbar-custom .nav li a:hover {
+  color: white;
+  outline: none;
+  background-color: transparent;
+}
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:active {
+  outline: none;
+  background-color: transparent;
+}
+.navbar-custom .nav li.active {
+  outline: none;
+}
+.navbar-custom .nav li.active a {
+  background-color: white;
+}
+.navbar-custom .nav li.active a:hover {
+  color: white;
+}
+@media (min-width: 768px) {
+  .navbar-custom {
+    /*padding: 20px 0;*/
+    color: aliceblue;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background: black;
+    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  .navbar-custom.top-nav-collapse {
+    padding: 8px;
+    background: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  }
+}
+
+.navbar-brand.martz{
+  font-size: 35px;
+  color: white;
+}
